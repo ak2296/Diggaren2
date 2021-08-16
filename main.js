@@ -47,20 +47,15 @@ $("#channel").on("change",function(){
 
     let url= "https://api.sr.se/api/v2/playlists/rightnow?channelid="+id;
 
-    console.log(url)
     $.get(url).then((data) => {
         
-        console.log(data)
         currentSongTitle = data.getElementsByTagName("title")[1];
         previousSongTitle = data.getElementsByTagName("title")[0];
         nextSongTitle = data.getElementsByTagName("title")[2];
         currentSongArtist = data.getElementsByTagName("artist")[1];
         previousSongArtist = data.getElementsByTagName("artist")[0];
         nextSongArtist = data.getElementsByTagName("artist")[2];
-        console.log(currentSongTitle, currentSongArtist);
-        console.log(previousSongTitle, previousSongArtist);
-        console.log(nextSongTitle, nextSongArtist);
-
+        
         $('#currentSongTitle').html(currentSongTitle); 
         $('#currentSongArtist').html(currentSongArtist); 
         $('#previousSongTitle').html(previousSongTitle); 
@@ -77,8 +72,7 @@ $("#current").click(function(){
 
   let raw_search_query = $('#currentSongTitle').text();
   let search_query = encodeURI(raw_search_query);
-  console.log(raw_search_query);
-  console.log(search_query);
+
   $.ajax({
     url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
     type: 'GET',
