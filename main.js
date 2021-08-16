@@ -75,9 +75,22 @@ $("#channel").on("change",function(){
 
 $("#current").click(function(){
 
-  console.log(currentSongTitle);
-
+  let raw_search_query = currentSongTitle
+  let search_query = encodeURI(raw_search_query);
+  console.log(search_query);
+  $.ajax({
+    url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
+    type: 'GET',
+    headers: {
+        'Authorization' : 'Bearer ' + accessToken
+    },
+    success: function(data) {
+      // Load our songs from Spotify into our page
+      let num_of_tracks = data.tracks.items.length;
+    }
+  });
 });
+
 $("#previous").click(function(){
     alert("You have clicked inside previous!");
     });
