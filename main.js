@@ -75,7 +75,7 @@ $("#channel").on("change",function(){
 
 $("#current").click(function(){
 
-  console.log(currentSongTitle);
+  console.log("hej");
 
 });
 $("#previous").click(function(){
