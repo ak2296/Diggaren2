@@ -146,7 +146,7 @@ $("#next").click(function(){
       // Load our songs from Spotify into our page
       let num_of_tracks = data.tracks.items.length;
       let count = 0;
-          // Max number of songs 
+          // Max number of songs to show
           const max_songs = 9;
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
