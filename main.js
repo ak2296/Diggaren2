@@ -70,10 +70,9 @@ $("#channel").on("change",function(){
 
 $("#current").click(function(){
 
-  let raw_search_query = $('#currentSongTitle').text() +'artist:'+ $('#currentSongArtist').text();
+  let raw_search_query = $('#currentSongTitle').text();
   let search_query = encodeURI(raw_search_query);
-  console.log(raw_search_query);
-  console.log(search_query);
+
   $.ajax({
     url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
     type: 'GET',
@@ -85,8 +84,8 @@ $("#current").click(function(){
       let num_of_tracks = data.tracks.items.length;
       
       let count = 0;
-          // Max number of songs is 4
-          const max_songs = 4;
+          // Max number of songs is 8
+          const max_songs = 8;
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
             let id = data.tracks.items[count].id;
@@ -114,11 +113,11 @@ $("#previous").click(function(){
         'Authorization' : 'Bearer ' + accessToken
     },
     success: function(data) {
-      // Load our songs from Spotify into our page
+      // Load songs from Spotify into page
       let num_of_tracks = data.tracks.items.length;
       let count = 0;
-          // Max number of songs is 4
-          const max_songs = 4;
+          // Max number of songs is 8
+          const max_songs = 8;
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
             let id = data.tracks.items[count].id;
@@ -147,8 +146,8 @@ $("#next").click(function(){
       // Load our songs from Spotify into our page
       let num_of_tracks = data.tracks.items.length;
       let count = 0;
-          // Max number of songs is 4
-          const max_songs = 4;
+          // Max number of songs is 8
+          const max_songs = 8;
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
             let id = data.tracks.items[count].id;
