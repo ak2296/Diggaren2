@@ -22,7 +22,7 @@ $( document ).ready(function() {
   let redirect_uri = 'https%3A%2F%2Fak2296.github.io%2FDiggaren2';
 
 
-  const redirect = `http://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
+  const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
   // Don't authorize if we have an access token already
   if(accessToken == null || accessToken == "" || accessToken == undefined){
     window.location.replace(redirect);
@@ -45,7 +45,7 @@ $("#channel").on("change",function(){
         id=164
         }
 
-    let url= "http://api.sr.se/api/v2/playlists/rightnow?channelid="+id;
+    let url= "https://api.sr.se/api/v2/playlists/rightnow?channelid="+id;
 
     console.log(url)
     $.get(url).then((data) => {
