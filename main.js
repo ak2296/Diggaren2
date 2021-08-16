@@ -88,6 +88,7 @@ $("#current").click(function(){
     success: function(data) {
       // Load our songs from Spotify into our page
       let num_of_tracks = data.tracks.items.length;
+      console.log(data.tracks)
       let count = 0;
           // Max number of songs is 4
           const max_songs = 4;
