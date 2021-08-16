@@ -71,11 +71,11 @@ $("#channel").on("change",function(){
 
     });
 
-});
+
 
 $("#current").click(function(){
 
-console.log(currentSongTitle);
+  console.log(currentSongTitle);
 
 });
 $("#previous").click(function(){
@@ -85,5 +85,5 @@ $("#next").click(function(){
     alert("You have clicked inside next!");
     });
 
-
   });
+});
