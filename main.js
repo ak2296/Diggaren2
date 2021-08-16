@@ -22,12 +22,12 @@ $( document ).ready(function() {
   let redirect_uri = 'https%3A%2F%2Fak2296.github.io%2FDiggaren2';
 
 
-  const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
+  const redirect = `http://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}`;
   // Don't authorize if we have an access token already
   if(accessToken == null || accessToken == "" || accessToken == undefined){
     window.location.replace(redirect);
   }
-});
+
 
 $("#channel").on("change",function(){
     //Getting Value
@@ -86,3 +86,4 @@ $("#next").click(function(){
     });
 
 
+  });
