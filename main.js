@@ -70,9 +70,9 @@ $("#channel").on("change",function(){
 
 $("#current").click(function(){
 
-  let raw_search_query = $('#currentSongTitle').text();
+  let raw_search_query = $('#currentSongTitle').text() +'artist:'+ $('#currentSongArtist').text();
   let search_query = encodeURI(raw_search_query);
-
+  console.log(raw_search_query)
   $.ajax({
     url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
     type: 'GET',
