@@ -44,17 +44,6 @@
 
 $("#current").click(function(){
 
-
-
-});
-$("#previous").click(function(){
-    alert("You have clicked inside previous!");
-    });
-$("#next").click(function(){
-    alert("You have clicked inside next!");
-    });
-
-
     const accessToken = getUrlParameter('access_token');
 
     // AUTHORIZE with Spotify (if needed)
@@ -98,3 +87,14 @@ $("#next").click(function(){
         }
       }
     }); // End of Spotify ajax call
+
+});
+$("#previous").click(function(){
+    alert("You have clicked inside previous!");
+    });
+$("#next").click(function(){
+    alert("You have clicked inside next!");
+    });
+
+
+    
