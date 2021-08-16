@@ -75,7 +75,7 @@ $("#channel").on("change",function(){
 
 $("#current").click(function(){
 
-  let raw_search_query = $('#currentSongTitle').val();
+  let raw_search_query = $('#currentSongTitle').text();
   let search_query = encodeURI(raw_search_query);
   console.log(raw_search_query);
   console.log(search_query);
