@@ -72,7 +72,7 @@ $("#current").click(function(){
 
   let raw_search_query = $('#currentSongTitle').text() +'artist:'+ $('#currentSongArtist').text();
   let search_query = encodeURI(raw_search_query);
-  console.log(raw_search_query)
+  console.log(raw_search_query);
   $.ajax({
     url: `https://api.spotify.com/v1/search?q=${search_query}&type=track`,
     type: 'GET',
@@ -89,7 +89,7 @@ $("#current").click(function(){
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
             let id = data.tracks.items[count].id;
-            console.log(id)
+
             // Constructing two different iframes to embed the song
             let src_str = `https://open.spotify.com/embed/track/${id}`;
             let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
